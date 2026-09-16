@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osorio Cigars | Handmade in Small Batches</title>
+  <meta name="description" content="Osorio Cigars crafts premium handmade cigars in small batches with rich, cedar-aged blends and a family legacy dating back to 1974." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --walnut: #241408;
+      --mahogany: #4a2c17;
+      --tobacco: #8a5a34;
+      --leaf-tan: #c99a63;
+      --parchment: #efe2c9;
+      --ember: #a8431f;
+      --cream-ink: #f6ecd9;
+      --dark-ink: #20140b;
+      --smoke: #5c4a33;
+      --line: rgba(201, 154, 99, 0.25);
+      --card: #fffaf2;
+      --muted: #cbb28d;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--parchment);
+      color: var(--dark-ink);
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+    }
+    h1, h2, h3, .wordmark { font-family: "Fraunces", serif; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      background: var(--walnut);
+      color: var(--cream-ink);
+      border-bottom: 3px solid var(--tobacco);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .wordmark {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--cream-ink);
+    }
+
+    .wordmark span { color: var(--leaf-tan); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      opacity: 0.86;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      border-color: var(--leaf-tan);
+    }
+
+    .nav-cta,
+    .btn-primary,
+    .btn-secondary,
+    .nl-form button {
+      display: inline-block;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-cta,
+    .btn-primary,
+    .nl-form button {
+      background: var(--ember);
+      color: var(--cream-ink);
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      padding: 10px 20px;
+      font-size: 0.88rem;
+    }
+
+    .nav-cta:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .nl-form button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .hero {
+      background:
+        linear-gradient(120deg, rgba(36, 20, 8, 0.86), rgba(36, 20, 8, 0.58)),
+        repeating-linear-gradient(100deg, #3a2313 0 6px, #33200f 6px 12px);
+      color: var(--cream-ink);
+      padding: 100px 24px 90px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      color: var(--leaf-tan);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4.8vw, 4rem);
+      line-height: 1.06;
+      margin-bottom: 22px;
+      max-width: 14ch;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 46ch;
+      opacity: 0.9;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 15px 28px;
+      font-size: 0.98rem;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(246, 236, 217, 0.45);
+      background: transparent;
+      color: var(--cream-ink);
+    }
+
+    .hero-band {
+      background: rgba(74, 44, 23, 0.96);
+      border: 1px solid var(--tobacco);
+      padding: 28px;
+      border-radius: 3px;
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-band h3 {
+      color: var(--leaf-tan);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .hero-band ul { list-style: none; }
+
+    .hero-band li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+      color: var(--cream-ink);
+      opacity: 0.9;
+    }
+
+    .hero-band li:last-child { border-bottom: none; }
+
+    .strip {
+      background: var(--tobacco);
+      color: var(--dark-ink);
+    }
+
+    .strip .wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 16px 24px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    section { padding: 76px 24px; }
+
+    .section-head {
+      max-width: 640px;
+      margin-bottom: 44px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--smoke);
+      font-size: 1.02rem;
+    }
+
+    .collections { background: var(--parchment); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .cig-card {
+      background: var(--card);
+      border: 1px solid #d9c39a;
+      border-radius: 3px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 230px;
+    }
+
+    .cig-card .tag {
+      align-self: flex-start;
+      background: var(--walnut);
+      color: var(--leaf-tan);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+
+    .cig-card h3 {
+      font-size: 1.28rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .cig-card p {
+      color: var(--smoke);
+      font-size: 0.93rem;
+    }
+
+    .cig-card .price {
+      font-family: "Fraunces", serif;
+      font-size: 1.42rem;
+      font-weight: 600;
+      color: var(--ember);
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .story {
+      background: var(--mahogany);
+      color: var(--cream-ink);
+    }
+
+    .story-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .story h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .story p {
+      opacity: 0.88;
+      margin-bottom: 16px;
+      max-width: 50ch;
+    }
+
+    .story-photo {
+      aspect-ratio: 4 / 3;
+      border-radius: 3px;
+      background:
+        linear-gradient(160deg, rgba(36, 20, 8, 0.42), rgba(36, 20, 8, 0.12)),
+        repeating-linear-gradient(78deg, #6b4020 0 10px, #5a3419 10px 20px);
+      border: 1px solid var(--tobacco);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .testimonials {
+      background: var(--cream-ink);
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .test-card {
+      background: var(--parchment);
+      border-left: 3px solid var(--ember);
+      padding: 24px;
+      border-radius: 2px;
+    }
+
+    .test-card p {
+      font-size: 0.96rem;
+      color: #4a3a26;
+      margin-bottom: 16px;
+    }
+
+    .test-card .who {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--walnut);
+    }
+
+    .newsletter {
+      background: var(--walnut);
+      color: var(--cream-ink);
+      text-align: center;
+    }
+
+    .newsletter .wrap {
+      max-width: 620px;
+    }
+
+    .newsletter h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .newsletter p {
+      opacity: 0.85;
+      margin-bottom: 26px;
+    }
+
+    .nl-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nl-form input {
+      flex: 1;
+      min-width: 220px;
+      max-width: 330px;
+      padding: 14px 16px;
+      border: 1px solid var(--tobacco);
+      border-radius: 2px;
+      background: var(--mahogany);
+      color: var(--cream-ink);
+      font-size: 0.95rem;
+    }
+
+    .nl-form input::placeholder { color: var(--muted); }
+
+    .nl-form button {
+      padding: 14px 26px;
+      border: none;
+      border-radius: 2px;
+      font-size: 0.95rem;
+    }
+
+    .newsletter-message {
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: var(--leaf-tan);
+      min-height: 20px;
+    }
+
+    footer {
+      background: var(--dark-ink);
+      color: #cbb28d;
+      padding: 56px 24px 28px;
+      font-size: 0.9rem;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    footer h4 {
+      color: var(--leaf-tan);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    footer ul { list-style: none; }
+    footer li { margin-bottom: 8px; }
+    footer a:hover { color: var(--cream-ink); }
+
+    .foot-bottom {
+      border-top: 1px solid #3a2c1c;
+      padding-top: 20px;
+      font-size: 0.78rem;
+      opacity: 0.75;
+    }
+
+    .age-note {
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner,
+      .story-inner,
+      .grid-3,
+      .test-grid,
+      .foot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .nav { justify-content: space-between; }
+      .strip .wrap { justify-content: center; text-align: center; }
+      .foot-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .foot-grid {
+        grid-template-columns: 1fr;
+      }
+      .nl-form {
+        flex-direction: column;
+      }
+      .nl-form input,
+      .nl-form button {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="wordmark">OSORIO<span>.</span></div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#collections">Collections</a>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Visit Us</a>
+      </nav>
+      <a href="#newsletter" class="nav-cta">Shop Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Family-rolled since 1974</div>
+        <h1>Cigars cut from the same leaf as three generations before you.</h1>
+        <p>Osorio Cigars hand-rolls every stick from seed-grown tobacco, aged in cedar and blended by a family that has spent fifty years perfecting the craft.</p>
+        <div class="hero-actions">
+          <a href="#collections" class="btn-primary">Browse the Collection</a>
+          <a href="#story" class="btn-secondary">Meet the Family</a>
+        </div>
+      </div>
+
+      <div class="hero-band" aria-label="This week's featured cigars">
+        <h3>This Week's Roll</h3>
+        <ul>
+          <li><span>Robusto, Maduro Wrapper</span><span>$9.80</span></li>
+          <li><span>Toro, Habano Wrapper</span><span>$11.20</span></li>
+          <li><span>Churchill, Connecticut</span><span>$12.60</span></li>
+          <li><span>Belicoso, Corojo</span><span>$10.95</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span>Free shipping over $99</span>
+      <span>Hand-rolled in small batches</span>
+      <span>Cedar-aged minimum 18 months</span>
+      <span>21+ only</span>
+    </div>
+  </div>
+
+  <section class="collections" id="collections">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The Collection</h2>
+        <p>Four core blends, each aged differently, each meant for a different hour of the evening.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="cig-card">
+          <span class="tag">Full Bodied</span>
+          <h3>Osorio Reserva Maduro</h3>
+          <p>Toro 6 x 54 — Nicaraguan filler, dark cocoa notes, and a long peppery finish.</p>
+          <div class="price">$11.85</div>
+        </article>
+
+        <article class="cig-card">
+          <span class="tag">Medium Bodied</span>
+          <h3>Osorio Habano Selecto</h3>
+          <p>Robusto 5 x 50 — cedar and leather up front, softening into dried fruit.</p>
+          <div class="price">$9.90</div>
+        </article>
+
+        <article class="cig-card">
+          <span class="tag">Mild</span>
+          <h3>Osorio Connecticut Claro</h3>
+          <p>Churchill 7 x 48 — creamy wrapper, gentle spice, and an easy all-day smoke.</p>
+          <div class="price">$10.40</div>
+        </article>
+
+        <article class="cig-card">
+          <span class="tag">Limited</span>
+          <h3>Osorio 50th Anniversary</h3>
+          <p>Belicoso 6.5 x 52 — the founder's original blend, re-rolled once each year.</p>
+          <div class="price">$18.75</div>
+        </article>
+
+        <article class="cig-card">
+          <span class="tag">Sampler</span>
+          <h3>Osorio Founders Sampler</h3>
+          <p>One of each core blend, boxed in cedar and built for a first taste of the family.</p>
+          <div class="price">$42.00</div>
+        </article>
+
+        <article class="cig-card">
+          <span class="tag">Accessory</span>
+          <h3>Walnut Travel Humidor</h3>
+          <p>Holds 15 cigars, Spanish cedar lined, and includes a brass hygrometer.</p>
+          <div class="price">$68.00</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div>
+        <h2>From our fields to your hands</h2>
+        <p>Osorio began in a single tobacco shed outside Estelí, where our founder rolled cigars for neighbors before selling a single stick commercially.</p>
+        <p>Fifty years later, the same family still sorts every leaf by hand, and the same recipe still ages in cedar before it reaches a box.</p>
+        <a href="#contact" class="btn-secondary" style="border-color: var(--leaf-tan); display: inline-block;">Read Our Full Story</a>
+      </div>
+      <div class="story-photo" aria-label="Osorio tobacco workshop"></div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What people are smoking</h2>
+        <p>Notes from the humidor room and the mail order line.</p>
+      </div>
+
+      <div class="test-grid">
+        <article class="test-card">
+          <p>“The Reserva Maduro is the first cigar I've reordered three times in a row. Consistent every single box.”</p>
+          <div class="who">— Daniel R.</div>
+        </article>
+
+        <article class="test-card">
+          <p>“Called in with a question about the Connecticut line and spoke to someone who actually rolls the cigars. Rare these days.”</p>
+          <div class="who">— Marisol V.</div>
+        </article>
+
+        <article class="test-card">
+          <p>“Bought the Founders Sampler as a gift and ended up keeping two for myself. Worth the wait on shipping.”</p>
+          <div class="who">— Chris O.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter" id="newsletter">
+    <div class="wrap">
+      <h2>Get first pick of new rolls</h2>
+      <p>Small batches sell out. Join the list and hear about them before we post them online.</p>
+      <form class="nl-form" id="newsletterForm">
+        <input type="email" id="emailInput" placeholder="Email address" aria-label="Email address" required />
+        <button type="submit">Join</button>
+      </form>
+      <div id="newsletterMessage" class="newsletter-message" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="wordmark" style="font-size: 1.2rem; color: var(--cream-ink); margin-bottom: 10px;">OSORIO<span>.</span></div>
+          <p style="max-width: 32ch;">Handmade cigars, family-rolled in small batches since 1974.</p>
+        </div>
+
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#collections">All Cigars</a></li>
+            <li><a href="#collections">Samplers</a></li>
+            <li><a href="#collections">Accessories</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li>Estelí, Nicaragua</li>
+            <li>Tue–Sat, 9am–7pm</li>
+            <li>hello@osoriocigars.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        © 2026 Osorio Cigars. All rights reserved.
+        <div class="age-note">OSORIO DOES NOT SELL TOBACCO TO ANYONE UNDER THE AGE OF 21. CIGARS ARE NOT A SAFE ALTERNATIVE TO CIGARETTES.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('newsletterForm');
+    const message = document.getElementById('newsletterMessage');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const input = document.getElementById('emailInput');
+      const email = input.value.trim();
+
+      if (!email) {
+        message.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      message.textContent = 'Thanks for joining — we’ll be in touch soon.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
